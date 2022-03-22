@@ -1,24 +1,85 @@
 # Charts
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+Install this library by using `npm install @drbackmischung/charts`.
 
-## Code scaffolding
+To use the charts you have to import the ChartsModule in your app.module.ts.
 
-Run `ng generate component component-name --project charts` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project charts`.
-> Note: Don't forget to add `--project charts` or else it will be added to the default project in your `angular.json` file. 
+## BarChart
 
-## Build
+```html
+<drb-barchart
+    [style]="style" 
+    [data]="data"
+    [labels]="labels"
+    [options]="options"
+    [hasLegend]="hasLegend"
+></drb-barchart>
+```
+Style: CSS Style for the surrounding `<div>`
 
-Run `ng build charts` to build the project. The build artifacts will be stored in the `dist/` directory.
+Data: Data to be displayed in the Chart
 
-## Publishing
+Labels: Labels for the different bars
 
-After building your library with `ng build charts`, go to the dist folder `cd dist/charts` and run `npm publish`.
+Options: Additional configuration
 
-## Running unit tests
+HasLegend: Boolean to turn the legent off
 
-Run `ng test charts` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Example:
 
-## Further help
+```javascript
+  public style: any = {width: "50%", display: "block"}
+  public data: ChartNgData[] = [
+    { data: [65, 59, 80, 81, 141, 55, 40], measure: 'Sales Product A', color: 'red'},
+    { data: [36, 21, 56, 0, 20, 150, 4], measure: 'Sales Product B', color: 'green' },
+  ];
+  public labels : ChartNgLabel[] = ['2010', '2011', '2012', '2013', '2014', '2015', '2016'];
+  public options: ChartNgOptions = {
+    responsive: true,
+  };
+  public hasLegend : boolean = true;
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## LineChart
+
+```html
+<drb-linechart
+    [style]="style"
+    [data]="data"
+    [labels]="labels"
+    [options]="options"
+    [hasLegend]="hasLegend"
+    [showFilling]="showFilling"
+    [showLine]="showLine"
+></drb-linechart>
+```
+Style: CSS Style for the surrounding `<div>`
+
+Data: Data to be displayed in the Chart
+
+Labels: Labels for the different bars
+
+Options: Additional configuration
+
+HasLegend: Boolean to turn the legent off
+
+ShowFilling: Boolean to fill the insides of the lines
+
+ShowLine: Boolean to turn on the lines
+
+Example:
+
+```javascript
+  public style: any = {width: "50%", display: "block"}
+  public data: ChartNgData[] = [
+    { data: [65, 59, 80, 81, 141, 55, 40], measure: 'Sales Product A', color: 'red'},
+    { data: [36, 21, 56, 0, 20, 150, 4], measure: 'Sales Product B', color: 'green' },
+  ];
+  public labels : ChartNgLabel[] = ['2010', '2011', '2012', '2013', '2014', '2015', '2016'];
+  public options: ChartNgOptions = {
+    responsive: true,
+  };
+  public hasLegend : boolean = true;
+  public showFilling: boolean = false;
+  public showLine: boolean = true;
+```

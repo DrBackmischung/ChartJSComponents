@@ -23,5 +23,6 @@ export class AppComponent {
     { data: [28, 48, 40, 19, 86, 27, 90], measure: 'Series B', color: 'yellow' },
     { data: [36, 21, 56, 0, 20, 150, 4], measure: 'Series C', color: 'green' },
   ];
+
   title = 'Charts Playground :)';
 }
