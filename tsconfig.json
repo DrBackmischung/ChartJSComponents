@@ -16,6 +16,10 @@
       "charts": [
         "dist/charts/charts",
         "dist/charts"
+      ],
+      "charts-ui5": [
+        "dist/charts-ui5/charts-ui5",
+        "dist/charts-ui5"
       ]
     },
     "forceConsistentCasingInFileNames": true,

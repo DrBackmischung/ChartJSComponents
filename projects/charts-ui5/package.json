@@ -1,6 +1,6 @@
 {
-  "name": "@drbackmischung/charts-ng",
-  "version": "1.2.1",
+  "name": "@drbackmischung/charts-ui5",
+  "version": "0.0.1",
   "license": "MIT",
   "author": {
     "name": "Mathis Neunzig (DrBackmischung)",
@@ -9,7 +9,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/DrBackmischung/ChartJSComponents.git",
-    "directory": "projects/charts"
+    "directory": "projects/charts-ui5"
   },
   "peerDependencies": {
     "@angular/common": "^12.2.0",
