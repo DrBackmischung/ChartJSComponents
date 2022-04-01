@@ -42,13 +42,13 @@ export class BarchartComponent implements OnInit {
   }
 
   public newData : any = [];
+  public newOptions : any = [];
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.data);
+    
     this.data.map((dataset: any) => {
-      console.log(dataset);
       const { data, measure, color } = dataset;
       const newDataset = {
         data: data,
@@ -57,11 +57,25 @@ export class BarchartComponent implements OnInit {
         hoverBackgroundColor: color,
         pointBackgroundColor: color,
       };
-      console.log("new: "+newDataset);
       this.newData.push(newDataset);
-      console.log("new dataset: "+this.newData);
     })
-    console.log(this.newData);
+
+    const { responsive, xAxisBeginAtZero, yAxisBeginAtZero } = this.options;
+    this.newOptions = {
+      responsive: responsive,
+      scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: yAxisBeginAtZero
+            }
+        }],
+        xAxes: [{
+            ticks: {
+                beginAtZero: xAxisBeginAtZero
+            }
+        }]
+      }
+    }
   }
 
 }

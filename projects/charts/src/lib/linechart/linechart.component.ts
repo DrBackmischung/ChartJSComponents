@@ -50,13 +50,13 @@ export class LinechartComponent implements OnInit {
   }
 
   public newData : any = [];
+  public newOptions : any = [];
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.data);
+
     this.data.map((dataset: any) => {
-      console.log(dataset);
       const { data, measure, color } = dataset;
       const newDataset = {
         data: data,
@@ -71,11 +71,26 @@ export class LinechartComponent implements OnInit {
         fill: this.showFilling,
         showLine: this.showLine
       };
-      console.log("new: "+newDataset);
       this.newData.push(newDataset);
-      console.log("new dataset: "+this.newData);
     })
-    console.log(this.newData);
+    
+    const { responsive, xAxisBeginAtZero, yAxisBeginAtZero } = this.options;
+    this.newOptions = {
+      responsive: responsive,
+      scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: yAxisBeginAtZero
+            }
+        }],
+        xAxes: [{
+            ticks: {
+                beginAtZero: xAxisBeginAtZero
+            }
+        }]
+      }
+    }
+
   }
 
 }

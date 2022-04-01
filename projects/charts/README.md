@@ -4,6 +4,8 @@ Install this library by using `npm install @drbackmischung/charts`.
 
 To use the charts you have to import the ChartsModule in your app.module.ts.
 
+Needed: `npm install chart.js@2.9.4 ng2-charts@2.4.2 --save`
+
 ## BarChart
 
 ```html
@@ -36,6 +38,7 @@ Example:
   public labels : ChartNgLabel[] = ['2010', '2011', '2012', '2013', '2014', '2015', '2016'];
   public options: ChartNgOptions = {
     responsive: true,
+    yAxisBeginAtZero: true
   };
   public hasLegend : boolean = true;
 ```
@@ -78,6 +81,7 @@ Example:
   public labels : ChartNgLabel[] = ['2010', '2011', '2012', '2013', '2014', '2015', '2016'];
   public options: ChartNgOptions = {
     responsive: true,
+    xAxisBeginAtZero: true
   };
   public hasLegend : boolean = true;
   public showFilling: boolean = false;

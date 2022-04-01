@@ -10,6 +10,7 @@ export class AppComponent {
 
   public options: ChartNgOptions = {
     responsive: true,
+    yAxisBeginAtZero: true
   };
   public labels : ChartNgLabel[] = ['2000', '2001', '2002', '2003', '2004', '2005', '2006'];
   public style: any = {width: "50%", display: "block"}

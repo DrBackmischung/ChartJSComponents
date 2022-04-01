@@ -14,5 +14,7 @@ export declare type ChartNgColor = string | CanvasGradient | CanvasPattern | str
 export declare type ChartNgLabel = string;
 
 export interface ChartNgOptions {
-    responsive: boolean;
+    responsive?: boolean;
+    xAxisBeginAtZero?: boolean;
+    yAxisBeginAtZero?: boolean;
 }
